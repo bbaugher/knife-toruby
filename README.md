@@ -1,29 +1,33 @@
-# Knife::Toruby
+Knife To Ruby
+=============
 
-TODO: Write a gem description
+A [Chef]() Knife plugin to print Chef objects (Role/Environment) in ruby code,
 
-## Installation
+    name "role_name"
 
-Add this line to your application's Gemfile:
+    description "my description"
 
-    gem 'knife-toruby'
+    default_attributes({
+      "a" => "b"
+    })
 
-And then execute:
+    override_attributes({
+      "a" => "b"
+    })
 
-    $ bundle
+    run_list("recipe[cookbook_a]", "recipe[cookbook_b]")
 
-Or install it yourself as:
+Should be equivalent to `knife show role -Fj` but for ruby.
 
-    $ gem install knife-toruby
+Check the [change log](CHANGELOG.md) to see what has changed.
 
-## Usage
+Installation
+------------
 
-TODO: Write usage instructions here
+    /opt/chef/embedded/gem install knife-toruby
 
-## Contributing
+Chef Objects Supported
+----------------------
 
-1. Fork it ( https://github.com/[my-github-username]/knife-toruby/fork )
-2. Create your feature branch (`git checkout -b my-new-feature`)
-3. Commit your changes (`git commit -am 'Add some feature'`)
-4. Push to the branch (`git push origin my-new-feature`)
-5. Create a new Pull Request
+ * Role
+ * Environment
