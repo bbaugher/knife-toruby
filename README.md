@@ -3,6 +3,7 @@ Knife To Ruby
 
 A [Chef](https://github.com/opscode/chef) Knife plugin to print Chef objects (Role/Environment) in ruby code,
 
+    user$ knife role toruby role_name
     name "role_name"
 
     description "my description"
