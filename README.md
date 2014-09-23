@@ -1,8 +1,9 @@
 Knife To Ruby
 =============
 
-A [Chef]() Knife plugin to print Chef objects (Role/Environment) in ruby code,
+A [Chef](https://github.com/opscode/chef) Knife plugin to print Chef objects (Role/Environment) in ruby code,
 
+    $ knife role toruby role_name
     name "role_name"
 
     description "my description"
@@ -25,6 +26,12 @@ Installation
 ------------
 
     /opt/chef/embedded/gem install knife-toruby
+
+How to Use
+----------
+
+    knife role toruby [ROLE]
+    knife environment toruby [ENVIRONMENT]
 
 Chef Objects Supported
 ----------------------
