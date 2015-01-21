@@ -38,3 +38,22 @@ Chef Objects Supported
 
  * Role
  * Environment
+
+Transform .json file to .rb locally
+-----------------------------------
+
+If you want to transform your .json role/environment files locally without uploading them to the chef-server you can do that using this script,
+
+    require 'chef/ruby_compat'
+    require 'chef/knife'
+    require 'chef/knife/core/object_loader'
+    require 'json'
+    
+    loader = ::Chef::Knife::Core::ObjectLoader.new(Chef::Role, nil)
+    role = loader.load_from("roles", 'MY_ROLE.json')
+    
+    puts Chef::RubyCompat.to_ruby(role)
+
+Update this script with your file name and if you are using an environment instead of a role. Save this file as something like `transform.rb`, make sure to have `knife-toruby` installed in knife and then run the command,
+
+    knife exec transform.rb
